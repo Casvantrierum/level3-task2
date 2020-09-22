@@ -8,9 +8,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
+
+const val REQ_PORTAL_KEY = "req_portal"
+const val BUNDLE_PORTAL_KEY = "bundle_portal"
+
 class AddPortalsFragment : Fragment() {
 
     override fun onCreateView(
