@@ -7,9 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.setFragmentResultListener
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.*
 import kotlinx.android.synthetic.main.fragment_portals.*
 
 /**
@@ -36,7 +34,7 @@ class PortalsFragment : Fragment() {
     private fun initViews() {
         // Initialize the recycler view with a linear layout manager, adapter
         rvPortals.layoutManager =
-            LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+            GridLayoutManager(context, 2)
         rvPortals.adapter = portalAdapter
         rvPortals.addItemDecoration(DividerItemDecoration(context,DividerItemDecoration.VERTICAL))
         observeAddPortalResult()

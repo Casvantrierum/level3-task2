@@ -33,22 +33,22 @@ class AddPortalsFragment : Fragment() {
     }
 
     private fun onAddPortal() {
-        val portalText = etName.text.toString()
+        val portalName = etName.text.toString()
         val portalUrl = etUrl.text.toString()
 
-        if (portalText.isNotBlank()) {
+        if (portalName.isNotBlank() && portalUrl.isNotBlank()) {
             //set the data as fragmentResult, we are listening for REQ_PORTAL_KEY in PortalsFragment!
-            setFragmentResult(REQ_PORTAL_KEY, bundleOf(Pair(BUNDLE_PORTAL_KEY, Portal(portalText, portalUrl))))
+            setFragmentResult(REQ_PORTAL_KEY, bundleOf(Pair(BUNDLE_PORTAL_KEY, Portal(portalName, portalUrl))))
 
             //"pop" the backstack, this means we destroy
             //this fragment and go back to the PortalsFragment
             findNavController().popBackStack()
         }
-//        } else {
-//            Toast.makeText(
-//                activity,
-//                R.string.not_valid_portal, Toast.LENGTH_SHORT
-//            ).show()
-//        }
+        else {
+            Toast.makeText(
+                activity,
+                R.string.not_valid_portal, Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 }

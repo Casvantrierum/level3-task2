@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/portalsFragment"
         android:name="com.example.level3_task2.PortalsFragment"
-        android:label="@string/first_fragment_label"
+        android:label="@string/portal_fragment_label"
         tools:layout="@layout/fragment_portals">
 
         <action
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/addPortalsFragment"
         android:name="com.example.level3_task2.AddPortalsFragment"
-        android:label="@string/second_fragment_label"
+        android:label="@string/add_portal_fragment_label"
         tools:layout="@layout/fragment_add_portals">
 
         <action
