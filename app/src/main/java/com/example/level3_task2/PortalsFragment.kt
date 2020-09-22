@@ -43,13 +43,13 @@ class PortalsFragment : Fragment() {
     }
 
     private fun observeAddPortalResult() {
-        setFragmentResultListener(REQ_PORTAL_KEY) { key, bundle ->
-            bundle.getString(BUNDLE_PORTAL_KEY)?.let {
-                val portal = Portal(it, "www.ok.nl")
-
-                portals.add(portal)
-                portalAdapter.notifyDataSetChanged()
-            } ?: Log.e("PortalFragment", "Request triggered, but empty portal text!")
-        }
+//        setFragmentResultListener(REQ_PORTAL_KEY) { key, bundle ->
+//            bundle.getString(BUNDLE_PORTAL_KEY)?.let {
+//                val portal = Portal(it, "www.ok.nl")
+//
+//                portals.add(portal)
+//                portalAdapter.notifyDataSetChanged()
+//            } ?: Log.e("PortalFragment", "Request triggered, but empty portal text!")
+//        }
     }
 }
