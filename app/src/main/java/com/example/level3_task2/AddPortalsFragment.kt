@@ -38,7 +38,7 @@ class AddPortalsFragment : Fragment() {
 
         if (portalText.isNotBlank()) {
             //set the data as fragmentResult, we are listening for REQ_PORTAL_KEY in PortalsFragment!
-            setFragmentResult(REQ_PORTAL_KEY, bundleOf(Pair(BUNDLE_PORTAL_KEY, portalText)))
+            setFragmentResult(REQ_PORTAL_KEY, bundleOf(Pair(BUNDLE_PORTAL_KEY, Portal(portalText, portalUrl))))
 
             //"pop" the backstack, this means we destroy
             //this fragment and go back to the PortalsFragment
