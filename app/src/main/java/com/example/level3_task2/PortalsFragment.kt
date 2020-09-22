@@ -48,13 +48,13 @@ class PortalsFragment : Fragment() {
     }
 
     private fun observeAddPortalResult() {
-        setFragmentResultListener(REQ_PORTAL_KEY) { key, bundle ->
+        setFragmentResultListener(REQ_PORTAL_KEY) { _, bundle ->
             bundle.getParcelable<Portal>(BUNDLE_PORTAL_KEY).let {
                 if (it is Portal){
                     portals.add(it)
                     portalAdapter.notifyDataSetChanged()
                 }
-            } ?: Log.e("PortalFragment", "Request triggered, but empty portal text!")
+            }
         }
     }
 
