@@ -1,14 +1,21 @@
 package com.example.level3_task2
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.fragment.app.setFragmentResultListener
 import androidx.recyclerview.widget.*
 import kotlinx.android.synthetic.main.fragment_portals.*
+import android.app.PendingIntent
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -16,7 +23,7 @@ import kotlinx.android.synthetic.main.fragment_portals.*
 class PortalsFragment : Fragment() {
 
     private val portals = arrayListOf<Portal>()
-    private val portalAdapter = PortalAdapter(portals)
+    private val portalAdapter = PortalAdapter(portals, { portal : Portal -> portalClicked(portal) })
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -49,5 +56,9 @@ class PortalsFragment : Fragment() {
                 }
             } ?: Log.e("PortalFragment", "Request triggered, but empty portal text!")
         }
+    }
+
+    private fun portalClicked(portal : Portal) {
+        Toast.makeText(context, portal.portalName, Toast.LENGTH_LONG).show()
     }
 }
