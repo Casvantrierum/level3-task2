@@ -29,6 +29,7 @@ class PortalsFragment : Fragment() {
     private val portalAdapter = PortalAdapter(portals, { portal : Portal -> portalClicked(portal) })
 
     val CUSTOM_TAB_PACKAGE_NAME = "com.android.chrome";
+    
     private var mCustomTabsServiceConnection: CustomTabsServiceConnection? = null
     private var mClient: CustomTabsClient? = null
     private var mCustomTabsSession: CustomTabsSession? = null
@@ -82,7 +83,6 @@ class PortalsFragment : Fragment() {
     }
 
     private fun portalClicked(portal : Portal) {
-        Toast.makeText(context, portal.portalName, Toast.LENGTH_LONG).show()
         val customTabsIntent = CustomTabsIntent.Builder(mCustomTabsSession)
             .setShowTitle(true)
             .build()
